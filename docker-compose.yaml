@@ -1,0 +1,33 @@
+version: "3.1"
+services:
+  mongo:
+    image: mongo:4.2.0
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ecc
+      MONGO_INITDB_DATABASE: test
+      TZ: Asia/Tokyo
+    volumes:
+      - ./mongo/db:/data/db
+      - ./mongo/configdb:/data/configdb
+      - ./mongo/init:/docker-entrypoint-initdb.d
+  
+  backend:
+    image: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8800"
+    environment:
+      - DBHOST=mongo
+      - DBPORT=27017
+      - PORT=8800
+    restart: "no"
+    depends_on:
+      - mongo
