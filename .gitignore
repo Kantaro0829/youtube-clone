@@ -2,7 +2,7 @@
 
 # dependencies
 front/node_modules/*
-ongoing-data/node_modules/*
+backend/node_modules/*
 /.pnp
 .pnp.js
 
