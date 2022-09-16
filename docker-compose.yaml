@@ -15,9 +15,12 @@ services:
       - ./mongo/db:/data/db
       - ./mongo/configdb:/data/configdb
       - ./mongo/init:/docker-entrypoint-initdb.d
+    command: [mongod, --auth]
   
   backend:
     image: backend
+    volumes:
+      - ./backend:/app
     build:
       context: ./backend
       dockerfile: Dockerfile
