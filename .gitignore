@@ -3,8 +3,8 @@
 # dependencies
 front/node_modules/*
 backend/node_modules/*
-/.pnp
-.pnp.js
+
+backend/requests.rest
 
 # testing
 /coverage

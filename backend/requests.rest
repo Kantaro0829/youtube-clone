@@ -14,13 +14,13 @@ Content-Type: application/json
     "name": "test", "password": "123456"
 }
 ###
-PUT http://localhost:8800/api/users/632a62c9cdc1f631daa07134
+PUT http://localhost:8800/api/users/632d089f3cd4151495765a44
 Content-Type: application/json
 
 {
     "name": "updated"
 }
 ###
-DELETE http://localhost:8800/api/users/632a62c9cdc1f631daa07134
-
+DELETE http://localhost:8800/api/users/632d089f3cd4151495765a44
 ###
+GET http://localhost:8800/api/users/find/632d089f3cd4151495765a44
