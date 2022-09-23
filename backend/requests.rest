@@ -24,3 +24,11 @@ Content-Type: application/json
 DELETE http://localhost:8800/api/users/632d089f3cd4151495765a44
 ###
 GET http://localhost:8800/api/users/find/632d089f3cd4151495765a44
+###
+PUT http://localhost:8800/api/users/sub/632d0f178186450c2c42c0eb
+Set-Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQwODlmM2NkNDE1MTQ5NTc2NWE0NCIsImlhdCI6MTY2Mzg5ODEyNH0.zqolPxTUutS5o-C3bKbA5nKzEtiqbNIsRVrPwvOwmLw; Path=/; HttpOnly
+###
+
+PUT http://localhost:8800/api/users/unsub/632d089f3cd4151495765a44
+Set-Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQwODlmM2NkNDE1MTQ5NTc2NWE0NCIsImlhdCI6MTY2Mzg5ODEyNH0.zqolPxTUutS5o-C3bKbA5nKzEtiqbNIsRVrPwvOwmLw; Path=/; HttpOnly
+###
