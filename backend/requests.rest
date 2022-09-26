@@ -2,7 +2,7 @@ POST http://localhost:8800/api/auth/signup
 Content-Type: application/json
 
 {
-    "name": "test", "email": "test@gmail.com", "password": "123456"
+    "name": "test3", "email": "test3@gmail.com", "password": "123456"
 }
 
 ###
@@ -25,10 +25,23 @@ DELETE http://localhost:8800/api/users/632d089f3cd4151495765a44
 ###
 GET http://localhost:8800/api/users/find/632d089f3cd4151495765a44
 ###
-PUT http://localhost:8800/api/users/sub/632d0f178186450c2c42c0eb
-Set-Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQwODlmM2NkNDE1MTQ5NTc2NWE0NCIsImlhdCI6MTY2Mzg5ODEyNH0.zqolPxTUutS5o-C3bKbA5nKzEtiqbNIsRVrPwvOwmLw; Path=/; HttpOnly
+PUT http://localhost:8800/api/users/sub/632fc70e8f6ce301b6d9c101
 ###
 
 PUT http://localhost:8800/api/users/unsub/632d089f3cd4151495765a44
 Set-Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQwODlmM2NkNDE1MTQ5NTc2NWE0NCIsImlhdCI6MTY2Mzg5ODEyNH0.zqolPxTUutS5o-C3bKbA5nKzEtiqbNIsRVrPwvOwmLw; Path=/; HttpOnly
 ###
+GET http://localhost:8800/api/videos/sub
+###
+
+POST http://localhost:8800/api/videos
+Content-Type: application/json
+
+{
+    "title": "the best video from 3rd user test2", "desc": "the description here!", "imgUrl": "testUrl", "videoUrl":"testUrlHere"
+}
+###
+DELETE http://localhost:8800/api/videos/6330eeff252065267108a3af
+###
+
+GET http://localhost:8800/api/videos/random
