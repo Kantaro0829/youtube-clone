@@ -49,7 +49,8 @@ export const deleteUser = async (req, res, next) => {
 export const getUser = async(req, res, next) => {
     try{
         //todo
-
+        const user = await User.findById(req.params.id)
+        res.status(200).json(user)
     }catch(err){
         next(err)
     }
@@ -58,16 +59,32 @@ export const getUser = async(req, res, next) => {
 
 export const subscribe = async(req, res, next) => {
     try{
+        //チャンネル登録しているユーザID（チャンネルID）を
+        //ユーザコレクションに追加
+        await User.findByIdAndUpdate(req.user.id, {
+            $push:{ subscribedUsers: req.params.id }
+        })
         //todo
-        
+        await User.findByIdAndUpdate(req.params.id, {
+            $inc:{ subscribers: 1}
+        })
+        res.status(200).json("subscribed successfully!")
     }catch(err){
         next(err)
     }
 }
 export const unsubscribe = async(req, res, next) => {
     try{
+        //チャンネル登録しているユーザID（チャンネルID）を
+        //ユーザコレクションから排除
+        await User.findByIdAndUpdate(req.user.id, {
+            $pull:{subscribedUsers: req.params.id}
+        })
         //todo
-        
+        await User.findByIdAndUpdate(req.params.id, {
+            $inc:{ subscribers: -1 }
+        })
+        res.status(200).json("unsubscribed successfully!")
     }catch(err){
         next(err)
     }
