@@ -49,3 +49,13 @@ GET http://localhost:8800/api/videos/random
 GET http://localhost:8800/api/videos/tags?tags=d
 ###
 GET http://localhost:8800/api/videos/search?q=2nd
+###
+POST http://localhost:8800/api/comments
+Content-Type: application/json
+
+{
+    "desc": "third comment here!!",
+    "videoId": "6330ee3a252065267108a3a9"
+}
+###
+GET http://localhost:8800/api/comments/6330ee3a252065267108a3a9
