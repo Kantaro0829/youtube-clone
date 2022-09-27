@@ -59,3 +59,12 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:8800/api/comments/6330ee3a252065267108a3a9
+###
+DELETE http://localhost/api/comments/
+###
+
+PUT http://localhost:8800/api/users/like/6330eecf252065267108a3ac
+
+###
+PUT http://localhost:8800/api/users/dislike/6330eecf252065267108a3ac
+
