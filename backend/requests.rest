@@ -43,5 +43,9 @@ Content-Type: application/json
 ###
 DELETE http://localhost:8800/api/videos/6330eeff252065267108a3af
 ###
-
 GET http://localhost:8800/api/videos/random
+###
+
+GET http://localhost:8800/api/videos/tags?tags=d
+###
+GET http://localhost:8800/api/videos/search?q=2nd
