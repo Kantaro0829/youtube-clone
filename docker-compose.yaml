@@ -34,6 +34,21 @@ services:
     restart: "no"
     depends_on:
       - mongo
+
+  front:
+    image: front
+    build:
+     context: ./front
+     dockerfile: Dockerfile
+    volumes:
+      - ./front:/app
+    # command: sh -c "cd app && PORT=3000 npm start"
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - backend
+
   
   mongo-express:
     image: mongo-express
