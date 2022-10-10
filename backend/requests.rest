@@ -33,6 +33,8 @@ Set-Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQwOD
 ###
 GET http://localhost:8800/api/videos/sub
 ###
+GET http://localhost:8800/api/videos/find/6330ee3a252065267108a3a9
+###
 
 POST http://localhost:8800/api/videos
 Content-Type: application/json
