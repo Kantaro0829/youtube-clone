@@ -1,37 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    //signinボタンをクリックすれば状態が変化する
-    currentUser: null,
+    //アクションで状態が変化する
+    currentVideo: null,
     loading: false,
     error: false
 }
 
 
 export const videoSlice = createSlice({
-    name: 'video',
+    name: "video",
     initialState,
     reducers: {
-
-        loginStart: (state) => {
+        fetchStart: (state) => {
             state.loading = true
         },
-        loginSuccess: (state, action) => {
+        fetchSuccess: (state, action) => {
             state.loading = false
-            state.currentUser = action.payload
+            state.currentVideo = action.payload
         },
-        loginFailure: (state) => {
+        fetchFailure: (state) => {
             state.loading = false
             state.error = true
         },
-        logout: (state) => {
-            state.currentUser = null
-            state.loading = false
-            state.error = false
-        }
-
-    }
+    },
   })
 
-  export const {loginStart, loginSuccess, loginFailure, logout} = videoSlice.actions
+  export const {fetchStart, fetchSuccess, fetchFailure} = videoSlice.actions
   export default videoSlice.reducer
